@@ -1,0 +1,46 @@
+.container {
+  background-color: #1a3873;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  .content {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 40px;
+    .left {
+      width: 40%;
+
+      .create-dice {
+        display: flex;
+        border: 1px solid white;
+        height: 350px;
+        width: 300px;
+        .dice-bin {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          border: 1px solid white;
+          width: 80%;
+          .dice {
+            color: white;
+            font-size: 40px;
+          }
+        }
+        .number-bin {
+          color: white;
+          font-size: 20px;
+        }
+      }
+    }
+    .right {
+      width: 65%;
+    }
+  }
+}
