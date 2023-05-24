@@ -1,5 +1,3 @@
-import { uuid } from "uuidv4";
-
 const numbers = [
   { name: "One", num: 1 },
   { name: "Two", num: 2 },
@@ -14,8 +12,10 @@ function Create() {
     <div className="create-dice">
       <div className="dice-bin"></div>
       <div className="number-bin">
-        {numbers.map((num) => (
-          <li key={uuid()}>{num.name}</li>
+        {numbers.map((num, i) => (
+          <div className="numbers" key={i}>
+            {num.name}
+          </div>
         ))}
       </div>
     </div>
