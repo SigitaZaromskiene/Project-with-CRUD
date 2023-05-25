@@ -75,66 +75,67 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            .dice {
-              font-size: 80px;
-
-              &::after {
-                display: block;
-              }
-              &-1::after {
-                content: "\2680";
-              }
-              &-2::after {
-                content: "\2681";
-              }
-              &-3::after {
-                content: "\2682";
-              }
-              &-4::after {
-                content: "\2683";
-              }
-              &-5::after {
-                content: "\2684";
-              }
-              &-6::after {
-                content: "\2685";
-              }
-            }
-          }
-          .button {
-            height: 35px;
-            width: 90px;
-            background-color: rgb(179, 166, 24);
-            border: none;
-            font-size: 18px;
-            color: black;
-            border-radius: 15px;
-            margin-top: 10px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            &:hover {
-              background-color: white;
-            }
           }
         }
-        .number-bin {
-          color: white;
-          font-size: 20px;
-          display: flex;
-          align-self: center;
-          width: 25%;
-          gap: 20px;
-          flex-direction: column;
-        }
-        .numbers {
-          text-align: center;
+
+        .button {
+          height: 35px;
+          width: 90px;
+          background-color: rgb(179, 166, 24);
+          border: none;
+          font-size: 18px;
+          color: black;
+          border-radius: 15px;
+          margin-top: 10px;
+          cursor: pointer;
+          margin-bottom: 10px;
           &:hover {
-            cursor: pointer;
-            color: black;
+            background-color: white;
           }
         }
       }
+      .number-bin {
+        color: white;
+        font-size: 20px;
+        display: flex;
+        align-self: center;
+        width: 25%;
+        gap: 20px;
+        flex-direction: column;
+      }
+      .numbers {
+        text-align: center;
+        &:hover {
+          cursor: pointer;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .dice {
+    height: 20px;
+
+    &::after {
+      display: block;
+    }
+    &-1::after {
+      content: "\2680";
+    }
+    &-2::after {
+      content: "\2681";
+    }
+    &-3::after {
+      content: "\2682";
+    }
+    &-4::after {
+      content: "\2683";
+    }
+    &-5::after {
+      content: "\2684";
+    }
+    &-6::after {
+      content: "\2685";
     }
   }
 }
