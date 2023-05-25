@@ -1,6 +1,21 @@
-function Button({ number, size, color, setNewSq }) {
+function Button({
+  number,
+  size,
+  color,
+  setNewSq,
+  setColor,
+  setSize,
+  setDiceNum,
+}) {
   const createHandler = () => {
-    setNewSq((n) => [...n, { color: color, size: size, number: number }]);
+    setNewSq({
+      color: color,
+      size: parseInt(size),
+      number: parseInt(number),
+    });
+    setDiceNum(1);
+    setColor("ffffff");
+    setSize(100);
   };
 
   return (
