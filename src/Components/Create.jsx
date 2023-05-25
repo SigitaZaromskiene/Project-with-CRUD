@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button";
 
 const numbers = [
   { name: "One", num: 1 },
@@ -13,6 +14,7 @@ function Create() {
   const [diceNum, setDiceNum] = useState(1);
   const [size, setSize] = useState(100);
   const [color, setColor] = useState("#fff");
+  const [newSq, setNewSq] = useState([]);
 
   return (
     <div className="create-dice">
@@ -42,6 +44,12 @@ function Create() {
               onChange={(e) => setColor(e.target.value)}
             ></input>
           </div>
+          <Button
+            color={color}
+            size={size}
+            number={diceNum}
+            setNewSq={setNewSq}
+          />
         </div>
       </div>
       <div className="number-bin">

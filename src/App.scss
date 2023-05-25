@@ -21,7 +21,6 @@
       .create-dice {
         display: flex;
         border: 1px solid white;
-        height: 300px;
 
         .range {
           display: flex;
@@ -52,6 +51,7 @@
           justify-content: flex-start;
           border: 1px solid white;
           width: 75%;
+          padding: 20px;
 
           .dice-frame {
             height: 60%;
@@ -80,6 +80,21 @@
             }
             &-6::after {
               content: "\2685";
+            }
+          }
+          .button {
+            height: 35px;
+            width: 90px;
+            background-color: rgb(179, 166, 24);
+            border: none;
+            font-size: 18px;
+            color: black;
+            border-radius: 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            &:hover {
+              background-color: white;
             }
           }
         }
