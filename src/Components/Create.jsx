@@ -11,13 +11,27 @@ const numbers = [
 
 function Create() {
   const [diceNum, setDiceNum] = useState(1);
-
-  console.log(diceNum);
+  const [size, setSize] = useState(100);
 
   return (
     <div className="create-dice">
       <div className="dice-bin">
-        <div className={"dice-" + diceNum}></div>
+        <div className="dice-frame">
+          <div
+            className={"dice-" + diceNum}
+            style={{ fontSize: size + "px" }}
+          ></div>
+        </div>
+        <div className="range">
+          <label>{size}</label>
+          <input
+            type="range"
+            value={size}
+            min="100"
+            max="180"
+            onChange={(e) => setSize(e.target.value)}
+          ></input>
+        </div>
       </div>
       <div className="number-bin">
         {numbers.map((num, i) => (
