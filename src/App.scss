@@ -28,6 +28,12 @@
           align-items: center;
           justify-content: center;
           gap: 20px;
+          flex-direction: column;
+
+          .color-range {
+            width: 100px;
+            height: 40px;
+          }
 
           label {
             font-size: 20px;
@@ -54,34 +60,26 @@
             align-items: center;
           }
           .dice {
-            color: white;
-
             &::after {
               display: block;
             }
             &-1::after {
               content: "\2680";
-              color: white;
             }
             &-2::after {
               content: "\2681";
-              color: white;
             }
             &-3::after {
               content: "\2682";
-              color: white;
             }
             &-4::after {
               content: "\2683";
-              color: white;
             }
             &-5::after {
               content: "\2684";
-              color: white;
             }
             &-6::after {
               content: "\2685";
-              color: white;
             }
           }
         }

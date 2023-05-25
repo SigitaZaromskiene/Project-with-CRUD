@@ -12,6 +12,7 @@ const numbers = [
 function Create() {
   const [diceNum, setDiceNum] = useState(1);
   const [size, setSize] = useState(100);
+  const [color, setColor] = useState("#fff");
 
   return (
     <div className="create-dice">
@@ -19,18 +20,28 @@ function Create() {
         <div className="dice-frame">
           <div
             className={"dice-" + diceNum}
-            style={{ fontSize: size + "px" }}
+            style={{ fontSize: size + "px", color }}
           ></div>
         </div>
         <div className="range">
-          <label>{size}</label>
-          <input
-            type="range"
-            value={size}
-            min="100"
-            max="180"
-            onChange={(e) => setSize(e.target.value)}
-          ></input>
+          <div style={{ display: "flex", gap: "20px" }}>
+            <input
+              type="range"
+              value={size}
+              min="100"
+              max="180"
+              onChange={(e) => setSize(e.target.value)}
+            ></input>
+            <label>{size}</label>
+          </div>
+          <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+            <input
+              className="color-range"
+              type="color"
+              value={color}
+              onChange={(e) => setColor(e.target.value)}
+            ></input>
+          </div>
         </div>
       </div>
       <div className="number-bin">
