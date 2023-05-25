@@ -13,6 +13,8 @@
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 40px;
+    padding: 20px;
+
     .left {
       width: 40%;
 
@@ -30,7 +32,15 @@
           width: 75%;
           .dice {
             color: white;
-            font-size: 40px;
+            font-size: 80px;
+            &::after {
+              display: block;
+            }
+            &-1::after {
+              content: "\2680";
+              font-size: 120px;
+              color: white;
+            }
           }
         }
         .number-bin {
@@ -38,12 +48,16 @@
           font-size: 20px;
           display: flex;
           align-self: center;
-
+          width: 25%;
           gap: 20px;
           flex-direction: column;
         }
         .numbers {
           text-align: center;
+          &:hover {
+            cursor: pointer;
+            color: black;
+          }
         }
       }
     }

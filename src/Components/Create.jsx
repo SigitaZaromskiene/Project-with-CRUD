@@ -10,7 +10,9 @@ const numbers = [
 function Create() {
   return (
     <div className="create-dice">
-      <div className="dice-bin"></div>
+      <div className="dice-bin">
+        <div className="dice-1"></div>
+      </div>
       <div className="number-bin">
         {numbers.map((num, i) => (
           <div className="numbers" key={i}>
