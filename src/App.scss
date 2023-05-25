@@ -41,6 +41,31 @@
               font-size: 120px;
               color: white;
             }
+            &-2::after {
+              content: "\2681";
+              font-size: 120px;
+              color: white;
+            }
+            &-3::after {
+              content: "\2682";
+              font-size: 120px;
+              color: white;
+            }
+            &-4::after {
+              content: "\2683";
+              font-size: 120px;
+              color: white;
+            }
+            &-5::after {
+              content: "\2684";
+              font-size: 120px;
+              color: white;
+            }
+            &-6::after {
+              content: "\2685";
+              font-size: 120px;
+              color: white;
+            }
           }
         }
         .number-bin {
