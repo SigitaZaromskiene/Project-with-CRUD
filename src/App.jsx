@@ -11,9 +11,13 @@ function App() {
   const [newSq, setNewSq] = useState(null);
   const [list, setList] = useState(null);
 
+  //  parsiusti nauja lista
+
   useEffect(() => {
     setList(read(KEY));
   }, [lastUpdate]);
+
+  // sukurti nauja lista
 
   useEffect(() => {
     if (newSq === null) {

@@ -1,6 +1,10 @@
+import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
 function NewSq({ list }) {
   if (list === null) {
-    return <div>LOading....</div>;
+    return <div>Loading....</div>;
   }
   return (
     <div
@@ -18,11 +22,23 @@ function NewSq({ list }) {
             color: li.color,
             fontSize: li.size + "px",
             border: "1px solid white",
-            height: "150px",
+            height: "160px",
             width: "120px",
             textAlign: "center",
+            position: "relative",
           }}
-        ></div>
+        >
+          <FontAwesomeIcon
+            icon={faXmark}
+            style={{
+              fontSize: "20px",
+              position: "absolute",
+              right: "7px",
+              top: "5px",
+              cursor: "pointer",
+            }}
+          />
+        </div>
       ))}
     </div>
   );
