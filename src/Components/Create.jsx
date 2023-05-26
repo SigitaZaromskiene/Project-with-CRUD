@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Button from "./Button";
-import NewSq from "./Newsq";
 
 const numbers = [
   { name: "One", num: 1 },

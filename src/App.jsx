@@ -2,24 +2,25 @@ import "./App.scss";
 import Create from "./Components/Create";
 import { useEffect, useState } from "react";
 import NewSq from "./Components/Newsq";
-import { v4 as uuidv4 } from "uuid";
 import { create, read } from "./Components/localStorage";
 
 const KEY = "newSq";
 
 function App() {
+  const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [newSq, setNewSq] = useState(null);
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(null);
 
   useEffect(() => {
     setList(read(KEY));
-  }, []);
+  }, [lastUpdate]);
 
   useEffect(() => {
     if (newSq === null) {
       return;
     }
     create(KEY, newSq);
+    setLastUpdate(Date.now());
   }, [newSq]);
 
   return (
