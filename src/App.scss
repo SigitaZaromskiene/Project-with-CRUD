@@ -1,3 +1,5 @@
+$buttonYellow: rgb(179, 166, 24);
+
 .container {
   background-color: #1a3873;
   min-height: 100vh;
@@ -16,19 +18,17 @@
     .right {
       width: 65%;
 
-      .list {
+      .deleteModal {
+        height: 50px;
+        width: 90px;
+        background-color: red;
+        color: black;
+        position: absolute;
+        font-size: 14px;
+        top: 25px;
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        .item {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid white;
-        }
+        justify-content: center;
+        align-items: flex-end;
       }
     }
 
@@ -81,7 +81,7 @@
         .button {
           height: 35px;
           width: 90px;
-          background-color: rgb(179, 166, 24);
+          background-color: $buttonYellow;
           border: none;
           font-size: 18px;
           color: black;

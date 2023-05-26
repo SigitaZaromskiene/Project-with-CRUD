@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import DeleteModal from "./DeleteModal";
 
 function NewSq({ list }) {
   if (list === null) {
@@ -40,6 +41,7 @@ function NewSq({ list }) {
               cursor: "pointer",
             }}
           />
+          <DeleteModal />
         </div>
       ))}
     </div>

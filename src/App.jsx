@@ -10,6 +10,7 @@ function App() {
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [newSq, setNewSq] = useState(null);
   const [list, setList] = useState(null);
+  const [deleteModal, setDeleteModal] = useState(null);
 
   //  parsiusti nauja lista
 
