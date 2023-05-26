@@ -24,8 +24,10 @@ function NewSq({ list }) {
             border: "1px solid white",
             height: "160px",
             width: "120px",
-            textAlign: "center",
             position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <FontAwesomeIcon
