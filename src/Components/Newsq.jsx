@@ -15,6 +15,7 @@ function NewSq({
   setSize,
   setDiceNum,
   diceNum,
+  setNewSq,
 }) {
   if (list === null) {
     return <div>Loading....</div>;
@@ -76,7 +77,7 @@ function NewSq({
           ) : null}
           {editModal && editModal.id === li.id ? (
             <EditModal
-              li={li}
+              li={list}
               deleteModal={deleteModal}
               setDeleteModal={setDeleteModal}
               setDeleteData={setDeleteData}
@@ -84,6 +85,8 @@ function NewSq({
               setColor={setColor}
               setDiceNum={setDiceNum}
               diceNum={diceNum}
+              setEditModal={setEditModal}
+              setNewSq={setNewSq}
             />
           ) : null}
         </div>

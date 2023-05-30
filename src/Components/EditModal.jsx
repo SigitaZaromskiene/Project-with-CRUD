@@ -11,7 +11,7 @@ const numbers = [
   { name: "Six", num: 6 },
 ];
 
-function EditModal({ setNewSq }) {
+function EditModal({ setNewSq, setEditModal }) {
   const [diceNum, setDiceNum] = useState(1);
   const [size, setSize] = useState(100);
   const [color, setColor] = useState("#ffffff");
@@ -79,6 +79,7 @@ function EditModal({ setNewSq }) {
                 setSize={setSize}
                 setDiceNum={setDiceNum}
                 setColor={setColor}
+                setEditModal={setEditModal}
               />
             </div>
           </div>

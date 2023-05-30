@@ -1,3 +1,5 @@
+import NewSq from "./Newsq";
+
 function Button1({
   number,
   size,
@@ -7,6 +9,7 @@ function Button1({
   setSize,
   setDiceNum,
 }) {
+  console.log(color);
   const createHandler = () => {
     setNewSq({
       color: color,
