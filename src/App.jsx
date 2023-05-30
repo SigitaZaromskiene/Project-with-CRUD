@@ -35,7 +35,11 @@ function App() {
           <Create newSq={newSq} setNewSq={setNewSq} />
         </div>
         <div className="right">
-          <NewSq list={list} />
+          <NewSq
+            list={list}
+            setDeleteModal={setDeleteModal}
+            deleteModal={deleteModal}
+          />
         </div>
       </div>
     </div>

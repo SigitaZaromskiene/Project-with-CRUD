@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import DeleteModal from "./DeleteModal";
 
-function NewSq({ list }) {
+function NewSq({ list, setDeleteModal, deleteModal }) {
   if (list === null) {
     return <div>Loading....</div>;
   }
@@ -32,6 +32,7 @@ function NewSq({ list }) {
           }}
         >
           <FontAwesomeIcon
+            onClick={() => setDeleteModal(li)}
             icon={faXmark}
             style={{
               fontSize: "20px",
@@ -41,7 +42,7 @@ function NewSq({ list }) {
               cursor: "pointer",
             }}
           />
-          <DeleteModal />
+          {deleteModal ? <DeleteModal /> : null}
         </div>
       ))}
     </div>
