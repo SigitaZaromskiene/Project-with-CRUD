@@ -90,6 +90,7 @@ $buttonYellow: rgb(179, 166, 24);
           margin-top: 10px;
           cursor: pointer;
           margin-bottom: 10px;
+
           &:hover {
             background-color: white;
           }
@@ -145,10 +146,8 @@ $buttonYellow: rgb(179, 166, 24);
   position: absolute;
   left: 0;
   top: 0;
-  background-color: white;
-  border: 1px solid white;
-  height: 220px;
-
+  background-color: gray;
+  width: 100%;
   display: flex;
 
   .dice-bin-2 {
@@ -158,13 +157,12 @@ $buttonYellow: rgb(179, 166, 24);
     justify-content: flex-start;
     border: 1px solid white;
     width: 75%;
-    padding: 20px;
 
     .dice-frame-2 {
-      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 145px;
     }
 
     .number-bin-2 {
@@ -184,4 +182,39 @@ $buttonYellow: rgb(179, 166, 24);
       }
     }
   }
+}
+
+.button-1 {
+  height: 25px;
+  width: 60px;
+  background-color: $buttonYellow;
+  border: none;
+  font-size: 12px;
+  color: black;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.color-range-2 {
+  width: 80px;
+  height: 30px;
+}
+
+.numbers-bin-2 {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.numbers:hover {
+  color: white;
 }

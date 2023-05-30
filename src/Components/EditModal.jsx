@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Button from "./Button";
+import Button1 from "./Button1";
+import CancelButton from "./CancelButton";
 
 const numbers = [
   { name: "One", num: 1 },
@@ -25,10 +26,17 @@ function EditModal({ setNewSq }) {
               style={{ fontSize: size + "px", color }}
             ></div>
           </div>
-          <div style={{ fontSize: "15px" }}>
-            <div
-              style={{ display: "flex", gap: "20px", flexDirection: "column" }}
-            >
+          <div
+            style={{
+              fontSize: "15px",
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            <div style={{ display: "flex", gap: "10px", cursor: "pointer" }}>
               <input
                 type="range"
                 value={size}
@@ -38,26 +46,44 @@ function EditModal({ setNewSq }) {
               ></input>
               <label>{size}</label>
             </div>
-            <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "10px",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
               <input
-                className="color-range"
+                className="color-range-2"
                 type="color"
                 value={color}
                 onChange={(e) => setColor(e.target.value)}
               ></input>
             </div>
-            <Button
-              color={color}
-              size={size}
-              number={diceNum}
-              setNewSq={setNewSq}
-              setSize={setSize}
-              setDiceNum={setDiceNum}
-              setColor={setColor}
-            />
+            <div style={{ display: "flex", gap: "5px" }}>
+              <Button1
+                color={color}
+                size={size}
+                number={diceNum}
+                setNewSq={setNewSq}
+                setSize={setSize}
+                setDiceNum={setDiceNum}
+                setColor={setColor}
+              />
+              <CancelButton
+                color={color}
+                size={size}
+                number={diceNum}
+                setNewSq={setNewSq}
+                setSize={setSize}
+                setDiceNum={setDiceNum}
+                setColor={setColor}
+              />
+            </div>
           </div>
         </div>
-        <div style={{ fontSize: "20px" }}>
+        <div className="numbers-bin-2">
           {numbers.map((num, i) => (
             <div
               className="numbers"

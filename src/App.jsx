@@ -71,7 +71,6 @@ function App() {
             setSize={setSize}
             setColor={setColor}
             setDiceNum={setDiceNum}
-            diceNum={diceNum}
           />
         </div>
       </div>
