@@ -1,16 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function DeleteModal() {
+function DeleteModal({ li, deleteModal, setDeleteModal }) {
+  const deleteSqHandler = () => {
+    setDeleteModal((li) => li.filter(deleteModal.id !== li.id));
+  };
   return (
     <div className="deleteModal">
       Are you sure?
       <FontAwesomeIcon
+        onClick={deleteSqHandler}
         icon={faCheck}
         style={{
           fontSize: "20px",
           position: "absolute",
-          right: "35px",
+          right: "50px",
+          top: "25px",
+          cursor: "pointer",
+        }}
+      />
+      <FontAwesomeIcon
+        onClick={() => setDeleteModal(null)}
+        icon={faXmark}
+        style={{
+          fontSize: "20px",
+          position: "absolute",
+          right: "25px",
           top: "25px",
           cursor: "pointer",
         }}

@@ -42,7 +42,14 @@ function NewSq({ list, setDeleteModal, deleteModal }) {
               cursor: "pointer",
             }}
           />
-          {deleteModal ? <DeleteModal /> : null}
+
+          {deleteModal && deleteModal.id === li.id ? (
+            <DeleteModal
+              li={li}
+              deleteModal={deleteModal}
+              setDeleteModal={setDeleteModal}
+            />
+          ) : null}
         </div>
       ))}
     </div>
