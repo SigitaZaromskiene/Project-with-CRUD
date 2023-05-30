@@ -140,3 +140,48 @@ $buttonYellow: rgb(179, 166, 24);
     }
   }
 }
+
+.edit-dice {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: white;
+  border: 1px solid white;
+  height: 220px;
+
+  display: flex;
+
+  .dice-bin-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid white;
+    width: 75%;
+    padding: 20px;
+
+    .dice-frame-2 {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .number-bin-2 {
+      color: white;
+      font-size: 20px;
+      display: flex;
+      align-self: center;
+      width: 25%;
+      gap: 20px;
+      flex-direction: column;
+    }
+    .numbers-2 {
+      text-align: center;
+      &:hover {
+        cursor: pointer;
+        color: black;
+      }
+    }
+  }
+}

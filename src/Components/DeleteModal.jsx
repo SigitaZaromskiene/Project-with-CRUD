@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function DeleteModal({ li, deleteModal, setDeleteModal }) {
+function DeleteModal({ li, deleteModal, setDeleteModal, setDeleteData }) {
   const deleteSqHandler = () => {
-    setDeleteModal((li) => li.filter(deleteModal.id !== li.id));
+    setDeleteData(li);
   };
   return (
     <div className="deleteModal">
