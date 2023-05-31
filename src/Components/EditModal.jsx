@@ -11,10 +11,10 @@ const numbers = [
   { name: "Six", num: 6 },
 ];
 
-function EditModal({ setNewSq, setEditModal }) {
-  const [diceNum, setDiceNum] = useState(1);
-  const [size, setSize] = useState(100);
-  const [color, setColor] = useState("#ffffff");
+function EditModal({ setNewSq, setEditModal, editModal }) {
+  const [diceNum, setDiceNum] = useState(editModal.number);
+  const [size, setSize] = useState(editModal.size);
+  const [color, setColor] = useState(editModal.color);
 
   return (
     <div>
@@ -70,6 +70,8 @@ function EditModal({ setNewSq, setEditModal }) {
                 setSize={setSize}
                 setDiceNum={setDiceNum}
                 setColor={setColor}
+                setEditModal={setEditModal}
+                editModal={editModal}
               />
               <CancelButton
                 color={color}

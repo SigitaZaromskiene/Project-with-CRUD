@@ -87,6 +87,7 @@ function NewSq({
               diceNum={diceNum}
               setEditModal={setEditModal}
               setNewSq={setNewSq}
+              editModal={editModal}
             />
           ) : null}
         </div>

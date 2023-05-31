@@ -8,8 +8,9 @@ function Button1({
   setColor,
   setSize,
   setDiceNum,
+  setEditModal,
+  editModal,
 }) {
-  console.log(color);
   const createHandler = () => {
     setNewSq({
       color: color,
