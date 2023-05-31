@@ -11,10 +11,6 @@ function NewSq({
   setEditModal,
   editModal,
   setEditData,
-  setColor,
-  setSize,
-  setDiceNum,
-  diceNum,
   setNewSq,
 }) {
   if (list === null) {
