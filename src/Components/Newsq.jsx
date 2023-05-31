@@ -11,6 +11,7 @@ function NewSq({
   setDeleteData,
   setEditModal,
   editModal,
+  setEditData,
   setColor,
   setSize,
   setDiceNum,
@@ -77,17 +78,14 @@ function NewSq({
           ) : null}
           {editModal && editModal.id === li.id ? (
             <EditModal
-              li={list}
+              li={li}
               deleteModal={deleteModal}
               setDeleteModal={setDeleteModal}
               setDeleteData={setDeleteData}
-              setSize={setSize}
-              setColor={setColor}
-              setDiceNum={setDiceNum}
-              diceNum={diceNum}
               setEditModal={setEditModal}
               setNewSq={setNewSq}
               editModal={editModal}
+              setEditData={setEditData}
             />
           ) : null}
         </div>

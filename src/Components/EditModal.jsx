@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button1 from "./Button1";
 import CancelButton from "./CancelButton";
 
 const numbers = [
@@ -11,10 +10,26 @@ const numbers = [
   { name: "Six", num: 6 },
 ];
 
-function EditModal({ setNewSq, setEditModal, editModal }) {
+function EditModal({
+  setNewSq,
+  setEditModal,
+  editModal,
+  editData,
+  setEditData,
+}) {
   const [diceNum, setDiceNum] = useState(editModal.number);
   const [size, setSize] = useState(editModal.size);
   const [color, setColor] = useState(editModal.color);
+
+  const editHandler = () => {
+    setEditData({
+      color: color,
+      size: parseInt(size),
+      number: parseInt(diceNum),
+      id: editModal.id,
+    });
+    setEditModal(null);
+  };
 
   return (
     <div>
@@ -62,17 +77,9 @@ function EditModal({ setNewSq, setEditModal, editModal }) {
               ></input>
             </div>
             <div style={{ display: "flex", gap: "5px" }}>
-              <Button1
-                color={color}
-                size={size}
-                number={diceNum}
-                setNewSq={setNewSq}
-                setSize={setSize}
-                setDiceNum={setDiceNum}
-                setColor={setColor}
-                setEditModal={setEditModal}
-                editModal={editModal}
-              />
+              <button className="button-1" onClick={editHandler}>
+                Edit
+              </button>
               <CancelButton
                 color={color}
                 size={size}

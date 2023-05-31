@@ -2,7 +2,7 @@ import "./App.scss";
 import Create from "./Components/Create";
 import { useEffect, useState } from "react";
 import NewSq from "./Components/Newsq";
-import { create, destroy, read } from "./Components/localStorage";
+import { create, destroy, read, edit } from "./Components/localStorage";
 
 const KEY = "newSq";
 
@@ -13,6 +13,7 @@ function App() {
   const [deleteModal, setDeleteModal] = useState(null);
   const [deleteData, setDeleteData] = useState(null);
   const [editModal, setEditModal] = useState(null);
+  const [editData, setEditData] = useState(null);
 
   const [diceNum, setDiceNum] = useState(1);
   const [size, setSize] = useState(100);
@@ -27,6 +28,14 @@ function App() {
   // sukurti nauja lista
 
   useEffect(() => {
+    if (newSq === null) {
+      return;
+    }
+    create(KEY, newSq);
+    setLastUpdate(Date.now());
+  }, [newSq]);
+
+  useEffect(() => {
     if (deleteData === null) {
       return;
     }
@@ -35,12 +44,12 @@ function App() {
   }, [deleteData]);
 
   useEffect(() => {
-    if (newSq === null) {
+    if (editData === null) {
       return;
     }
-    create(KEY, newSq);
+    edit(KEY, editData, editData.id);
     setLastUpdate(Date.now());
-  }, [newSq]);
+  }, [editData]);
 
   return (
     <div className="container">
@@ -71,6 +80,7 @@ function App() {
             setSize={setSize}
             setColor={setColor}
             setDiceNum={setDiceNum}
+            setEditData={setEditData}
           />
         </div>
       </div>
