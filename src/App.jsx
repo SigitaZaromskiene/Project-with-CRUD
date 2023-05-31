@@ -3,6 +3,8 @@ import Create from "./Components/Create";
 import { useEffect, useState } from "react";
 import NewSq from "./Components/Newsq";
 import { create, destroy, read, edit } from "./Components/localStorage";
+import Message from "./Components/Message";
+import { v4 as uuidv4 } from "uuid";
 
 const KEY = "newSq";
 
@@ -14,7 +16,7 @@ function App() {
   const [deleteData, setDeleteData] = useState(null);
   const [editModal, setEditModal] = useState(null);
   const [editData, setEditData] = useState(null);
-
+  const [message, setMessage] = useState(null);
   const [diceNum, setDiceNum] = useState(1);
   const [size, setSize] = useState(100);
   const [color, setColor] = useState("#ffffff");
@@ -32,6 +34,7 @@ function App() {
       return;
     }
     create(KEY, newSq);
+    msg("New dice created");
     setLastUpdate(Date.now());
   }, [newSq]);
 
@@ -40,6 +43,7 @@ function App() {
       return;
     }
     destroy(KEY, deleteData.id);
+    msg("Dice is deleted");
     setLastUpdate(Date.now());
   }, [deleteData]);
 
@@ -48,8 +52,16 @@ function App() {
       return;
     }
     edit(KEY, editData, editData.id);
+    msg("Dice is edited");
     setLastUpdate(Date.now());
   }, [editData]);
+
+  const msg = (text) => {
+    setMessage((m) => [...(m ?? []), { text, id: uuidv4 }]);
+    setTimeout(() => {
+      setMessage((m) => m.filter((m) => uuidv4 !== m.id));
+    }, 3000);
+  };
 
   return (
     <div className="container">
@@ -84,6 +96,7 @@ function App() {
           />
         </div>
       </div>
+      {message ? <Message setMessage={setMessage} message={message} /> : null}
     </div>
   );
 }

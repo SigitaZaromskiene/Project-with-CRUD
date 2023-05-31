@@ -13,6 +13,7 @@ $buttonYellow: rgb(179, 166, 24);
     display: flex;
     gap: 50px;
     margin-top: 40px;
+    width: 1400px;
 
     .right {
       width: 65%;
@@ -216,4 +217,28 @@ $buttonYellow: rgb(179, 166, 24);
 
 .numbers:hover {
   color: white;
+}
+
+.messages {
+  position: fixed;
+  top: 450px;
+  left: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: 15px;
+
+  .message {
+    background-color: white;
+    border: 1px solid black;
+    height: 30px;
+    width: 200px;
+    align-items: center;
+    padding: 5px;
+    color: red;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+  }
 }
